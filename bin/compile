@@ -21,7 +21,7 @@ cd ${BUILD_DIR}
 
 echo -n "-----> Installing julia ...."
 
-deps="https://julialang-s3.julialang.org/bin/linux/x64/1.1/julia-1.1.0-linux-x86_64.tar.gz"
+deps="https://julialang-s3.julialang.org/bin/linux/x64/1.2/julia-1.2.0-linux-x86_64.tar.gz"
 
 for dep in $deps; do
   depb=$(basename $dep)
@@ -42,6 +42,10 @@ export LIBRARY_PATH=./.apt/usr/lib/x86_64-linux-gnu:./julia/lib:./julia/lib/x86_
 export LD_LIBRARY_PATH=./.apt/usr/lib/x86_64-linux-gnu:./julia/lib:./julia/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 export PATH=./.apt/usr/bin:./julia/bin:$PATH
 export JULIA_LOAD_PATH="@:"
+
+# Get PyCall to Build
+export PYTHON="python"
+
 echo $PATH
 echo $LD_LIBRARY_PATH
 # echo $(cmake -version)
