@@ -44,7 +44,8 @@ export PATH=./.apt/usr/bin:./julia/bin:$PATH
 export JULIA_LOAD_PATH="@:"
 
 # Get PyCall to Build
-export PYTHON="python"
+export PYCALL_DEBUG_BUILD="yes"
+export PYTHON=".julia/conda/3/bin/python3"
 
 echo $PATH
 echo $LD_LIBRARY_PATH
